@@ -6,11 +6,14 @@ orbs:
 jobs:
   build: 
     docker:
-      - image: cimg/python:3.10.4
+      - image: cimg/python:3.10.0
     steps:
       - checkout
       - python/install-packages:
           pkg-manager: poetry
+      - run:
+          command: python -m unittest tests/test_*.py
+          name: Test
 
 workflows:
   main: 
