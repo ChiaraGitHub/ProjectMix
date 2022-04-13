@@ -15,6 +15,9 @@ jobs:
           command: 
             pip install pytest
       - run:
+          command: 
+            pip install pandas
+      - run:
           command:
             pytest tests/test*
 
