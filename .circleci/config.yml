@@ -12,7 +12,9 @@ jobs:
       - python/install-packages:
           pkg-manager: poetry
       - run:
-          command: pytest tests/test*
+          command: 
+            pip install pytest
+            pytest tests/test*
 
 workflows:
   main: 
