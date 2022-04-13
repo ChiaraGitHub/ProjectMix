@@ -11,6 +11,8 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: poetry
+      - run:
+          command: pytest tests/test*
 
 workflows:
   main: 
