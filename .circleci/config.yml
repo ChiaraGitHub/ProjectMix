@@ -17,6 +17,8 @@ jobs:
       - image: qnib/pytest
     steps:
       - checkout
+      - python/install-packages:
+          pkg-manager: poetry
       - run: 
           name: Tests
           command: pytest tests/test_*.py
@@ -24,7 +26,4 @@ jobs:
 workflows:
   main: 
     jobs:
-      - build
-      - test
-          pkg-manager: poetry
-          test-tool: pytest
+      - build-and-test
