@@ -11,6 +11,7 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: poetry
+      - python/save-cache
       - run:
           command: python -m unittest tests/test_*.py
           name: Test
