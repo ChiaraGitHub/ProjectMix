@@ -8,6 +8,7 @@ authors = ["Chiara"]
 python = "^3.10"
 pandas = "^1.4.2"
 hydra-core = "^1.1.2"
+pytest = "^7.1.1"
 
 [tool.poetry.dev-dependencies]
 

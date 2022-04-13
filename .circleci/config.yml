@@ -11,12 +11,18 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: poetry
-      - python/save-cache
-      - run:
-          command: python -m unittest tests/test_*.py
-          name: Test
+
+  test:
+    docker: 
+      - image: qnib/pytest
+    steps:
+      - checkout
+      - run: 
+          name: Tests
+          command: pytest tests/test_*.py
 
 workflows:
   main: 
     jobs:
       - build
+      - test
